@@ -3,65 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>CERTIPRO SOLUTIONS</title>
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    color:#333;
+font-family:Segoe UI,Arial,sans-serif;
+color:#333;
+line-height:1.6;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+height:80px;
+}
+
+.lang-buttons button{
+border:none;
+background:#0B3D91;
+color:white;
+padding:10px 14px;
+margin-left:5px;
+border-radius:6px;
+cursor:pointer;
 }
 
 .hero{
-    background:#0B3D91;
-    color:white;
-    text-align:center;
-    padding:80px 20px;
+background:linear-gradient(135deg,#0B3D91,#1b5fcc);
+color:white;
+text-align:center;
+padding:100px 20px;
 }
 
 .hero h1{
-    font-size:48px;
-    margin-bottom:10px;
+font-size:3rem;
+margin-bottom:15px;
+}
+
+.hero h2{
+font-weight:300;
+margin-bottom:25px;
 }
 
 .hero p{
-    font-size:22px;
+max-width:850px;
+margin:auto;
+font-size:1.2rem;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 28px;
+background:#7CB342;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
 }
 
 .section{
-    max-width:1100px;
-    margin:auto;
-    padding:60px 20px;
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
 }
 
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+.section-title{
+text-align:center;
+color:#0B3D91;
+margin-bottom:40px;
+font-size:2rem;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
 .card{
-    border:1px solid #ddd;
-    border-radius:10px;
-    padding:25px;
+padding:25px;
+border-radius:12px;
+border:1px solid #ddd;
+background:white;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 .card h3{
-    color:#0B3D91;
+color:#7CB342;
+margin-bottom:10px;
+}
+
+.about{
+background:#f7f9fc;
+}
+
+.markets{
+background:#0B3D91;
+color:white;
+text-align:center;
+padding:70px 20px;
+}
+
+.market-list{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+font-size:1.2rem;
+margin-top:25px;
 }
 
 .contact{
-    background:#F5F7FA;
-    text-align:center;
-    padding:60px 20px;
+text-align:center;
+padding:80px 20px;
+}
+
+.contact-email{
+font-size:1.3rem;
+font-weight:bold;
+color:#0B3D91;
+margin:20px 0;
 }
 
 .footer{
-    background:#0B3D91;
-    color:white;
-    text-align:center;
-    padding:20px;
+background:#071f4f;
+color:white;
+text-align:center;
+padding:25px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2rem;
+}
+
+.logo{
+height:60px;
+}
+
 }
 
 </style>
@@ -69,71 +173,165 @@ body{
 
 <body>
 
+<nav class="navbar">
+
+<img src="LOGO.png" class="logo" alt="CERTIPRO">
+
+<div class="lang-buttons">
+<button onclick="setLanguage('en')">EN</button>
+<button onclick="setLanguage('es')">ES</button>
+</div>
+
+</nav>
+
 <section class="hero">
+
 <h1>CERTIPRO SOLUTIONS</h1>
-<p>Regulatory Compliance & Certification Services</p>
-</section>
 
-<section class="section">
+<h2
+data-en="Regulatory Compliance & Certification Services"
+data-es="Servicios de Cumplimiento Regulatorio y Certificación">
+Regulatory Compliance & Certification Services
+</h2>
 
-<h2>Our Services</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>NOM Certification Consulting</h3>
-<p>Guidance and support for certification projects in Mexico.</p>
-</div>
-
-<div class="card">
-<h3>Laboratory Testing Coordination</h3>
-<p>Management of testing activities and communication with accredited laboratories.</p>
-</div>
-
-<div class="card">
-<h3>UL / ETL Support</h3>
-<p>Certification support for products entering the U.S. and Canadian markets.</p>
-</div>
-
-<div class="card">
-<h3>Regulatory Compliance</h3>
-<p>Technical documentation and compliance project management.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2>Why CERTIPRO?</h2>
-
-<p>
-We help manufacturers navigate testing,
-certification and regulatory requirements
-through structured project management,
-technical expertise and personalized support.
+<p
+data-en="Helping manufacturers navigate testing, certification, and regulatory compliance requirements across North America."
+data-es="Ayudando a fabricantes a navegar pruebas, certificaciones y requisitos regulatorios en Norteamérica.">
+Helping manufacturers navigate testing, certification, and regulatory compliance requirements across North America.
 </p>
+
+<a href="mailto:info@certiprosolutions.net" class="btn"
+data-en="Request Information"
+data-es="Solicitar Información">
+Request Information
+</a>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title"
+data-en="Our Services"
+data-es="Nuestros Servicios">
+Our Services
+</h2>
+
+<div class="grid">
+
+<div class="card"><h3>NOM Certification Consulting</h3></div>
+
+<div class="card"><h3>Laboratory Testing Coordination</h3></div>
+
+<div class="card"><h3>UL / ETL Certification Support</h3></div>
+
+<div class="card"><h3>Regulatory Compliance Services</h3></div>
+
+<div class="card"><h3>Product Safety Compliance</h3></div>
+
+<div class="card"><h3>Technical Documentation Review</h3></div>
+
+<div class="card"><h3>Market Access Support</h3></div>
+
+</div>
+
+</section>
+
+<section class="section about">
+
+<h2 class="section-title"
+data-en="About Us"
+data-es="Nosotros">
+About Us
+</h2>
+
+<p
+data-en="CERTIPRO SOLUTIONS is a specialized consulting firm focused on certification, testing coordination, and regulatory compliance. We support manufacturers through technical documentation, testing activities, project management, and market access requirements."
+data-es="CERTIPRO SOLUTIONS es una firma especializada en consultoría enfocada en certificación, coordinación de pruebas y cumplimiento regulatorio. Apoyamos a fabricantes mediante documentación técnica, actividades de ensayo, gestión de proyectos y requisitos de acceso a mercados.">
+CERTIPRO SOLUTIONS is a specialized consulting firm focused on certification, testing coordination, and regulatory compliance.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title"
+data-en="Why Choose Us?"
+data-es="¿Por qué elegirnos?">
+Why Choose Us?
+</h2>
+
+<div class="grid">
+
+<div class="card"><h3>Technical Expertise</h3></div>
+
+<div class="card"><h3>Project Management Approach</h3></div>
+
+<div class="card"><h3>North American Market Experience</h3></div>
+
+<div class="card"><h3>Personalized Support</h3></div>
+
+</div>
+
+</section>
+
+<section class="markets">
+
+<h2
+data-en="Markets We Support"
+data-es="Mercados que Atendemos">
+Markets We Support
+</h2>
+
+<div class="market-list">
+
+<div>🇲🇽 Mexico</div>
+<div>🇺🇸 United States</div>
+<div>🇨🇦 Canada</div>
+
+</div>
 
 </section>
 
 <section class="contact">
 
-<h2>Contact Us</h2>
+<h2
+data-en="Contact Us"
+data-es="Contáctenos">
+Contact Us
+</h2>
 
-<p>
+<div class="contact-email">
 info@certiprosolutions.net
-</p>
+</div>
 
-<p>
-Mexico | Supporting North American Markets
-</p>
+<p>Mexico | United States | Canada</p>
 
 </section>
 
 <div class="footer">
+
 Your Partner in Compliance. Your Trust in Certification.
+
 </div>
+
+<script>
+
+function setLanguage(lang){
+
+document.querySelectorAll("[data-en]").forEach(el=>{
+
+if(lang==="es"){
+el.textContent=el.getAttribute("data-es");
+}
+else{
+el.textContent=el.getAttribute("data-en");
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
