@@ -337,16 +337,17 @@ info@certiprosolutions.net
 
 <p>Mexico | United States | Canada</p>
 
-  <form class="contact-form">
+<form class="contact-form" id="contactForm">
 
-<input type="text" placeholder="Nombre / Name" required>
-<input type="text" placeholder="Empresa / Company">
+<input type="text" id="name" placeholder="Nombre / Name" required>
 
-<input type="email" placeholder="Correo Electrónico / Email" required>
+<input type="text" id="company" placeholder="Empresa / Company">
 
-<input type="tel" placeholder="Teléfono / Phone">
+<input type="email" id="email" placeholder="Correo Electrónico / Email" required>
 
-<select>
+<input type="tel" id="phone" placeholder="Teléfono / Phone">
+
+<select id="service">
 <option>Seleccione un servicio</option>
 <option>Certificación NOM</option>
 <option>Pruebas de Laboratorio</option>
@@ -355,7 +356,7 @@ info@certiprosolutions.net
 <option>Cumplimiento Regulatorio</option>
 </select>
 
-<textarea rows="5" placeholder="Mensaje / Message"></textarea>
+<textarea id="message" rows="5" placeholder="Mensaje / Message"></textarea>
 
 <button type="submit">Enviar / Send</button>
 
@@ -368,6 +369,8 @@ info@certiprosolutions.net
 Your Partner in Compliance. Your Trust in Certification.
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
 
@@ -386,7 +389,73 @@ el.textContent=el.getAttribute("data-en");
 
 }
 
-</script>
+emailjs.init({
+    publicKey: "fzrwVx-Eyaz_fQqh5"
+});
 
+document.addEventListener("DOMContentLoaded", function(){
+
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const company = document.getElementById("company").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const service = document.getElementById("service").value;
+        const message = document.getElementById("message").value;
+
+        emailjs.send(
+            "service_g0bhp9e",
+            "template_fg4juom",
+            {
+                name: name,
+                company: company,
+                email: email,
+                phone: phone,
+                service: service,
+                message: message
+            }
+        )
+        .then(function(){
+
+            const whatsappMessage =
+`Hola Juan,
+
+Nombre: ${name}
+Empresa: ${company}
+Correo: ${email}
+Teléfono: ${phone}
+Servicio: ${service}
+
+Mensaje:
+${message}`;
+
+            window.open(
+                `https://wa.me/525615835697?text=${encodeURIComponent(whatsappMessage)}`,
+                "_blank"
+            );
+
+            alert("Information sent successfully.");
+
+            form.reset();
+
+        })
+        .catch(function(error){
+
+            console.error(error);
+
+            alert("Error sending information.");
+
+        });
+
+    });
+
+});
+
+</script>
 </body>
 </html>
