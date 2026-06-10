@@ -142,6 +142,37 @@ text-align:center;
 padding:80px 20px;
 }
 
+.contact-form{
+max-width:700px;
+margin:30px auto 0;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+.contact-form button{
+background:#0B3D91;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+}
+
+.contact-form button:hover{
+opacity:.9;
+}  
 .contact-email{
 font-size:1.3rem;
 font-weight:bold;
@@ -305,6 +336,29 @@ info@certiprosolutions.net
 </div>
 
 <p>Mexico | United States | Canada</p>
+
+  <form class="contact-form">
+
+<input type="text" placeholder="Nombre / Name" required>
+
+<input type="email" placeholder="Correo Electrónico / Email" required>
+
+<input type="tel" placeholder="Teléfono / Phone">
+
+<select>
+<option>Seleccione un servicio</option>
+<option>Certificación NOM</option>
+<option>Pruebas de Laboratorio</option>
+<option>Certificación UL</option>
+<option>Certificación ETL</option>
+<option>Cumplimiento Regulatorio</option>
+</select>
+
+<textarea rows="5" placeholder="Mensaje / Message"></textarea>
+
+<button type="submit">Enviar / Send</button>
+
+</form>
 
 </section>
 
