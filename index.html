@@ -112,9 +112,10 @@ transform:translateY(-5px);
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
-.card h3{
-color:#7CB342;
-margin-bottom:10px;
+.card p{
+font-size:.95rem;
+color:#666;
+line-height:1.5;
 }
 
 .about{
@@ -226,9 +227,9 @@ Regulatory Compliance & Certification Services
 </h2>
 
 <p
-data-en="Helping manufacturers navigate testing, certification, and regulatory compliance requirements across North America."
-data-es="Ayudando a fabricantes a navegar pruebas, certificaciones y requisitos regulatorios en Norteamérica.">
-Helping manufacturers navigate testing, certification, and regulatory compliance requirements across North America.
+data-en="Supporting manufacturers through testing, certification, and regulatory compliance across North America."
+data-es="Apoyando a fabricantes en procesos de pruebas, certificación y cumplimiento regulatorio en Norteamérica.">
+Supporting manufacturers through testing, certification, and regulatory compliance across North America.
 </p>
 
 <a href="mailto:info@certiprosolutions.net" class="btn"
@@ -249,19 +250,40 @@ Our Services
 
 <div class="grid">
 
-<div class="card"><h3>NOM Certification Consulting</h3></div>
+<div class="card">
+<h3>NOM Certification Consulting</h3>
+<p>Guidance through NOM certification requirements, documentation, and compliance processes.</p>
+</div>
 
-<div class="card"><h3>Laboratory Testing Coordination</h3></div>
+<div class="card">
+<h3>Laboratory Testing Coordination</h3>
+<p>Management and coordination of testing activities with accredited laboratories.</p>
+</div>
 
-<div class="card"><h3>UL / ETL Certification Support</h3></div>
+<div class="card">
+<h3>UL / ETL Certification Support</h3>
+<p>Technical support for product certification projects in the United States and Canada.</p>
+</div>
 
-<div class="card"><h3>Regulatory Compliance Services</h3></div>
+<div class="card">
+<h3>Regulatory Compliance Services</h3>
+<p>Compliance strategies to meet regulatory and market requirements.</p>
+</div>
 
-<div class="card"><h3>Product Safety Compliance</h3></div>
+<div class="card">
+<h3>Product Safety Compliance</h3>
+<p>Assessment of product safety requirements and applicable standards.</p>
+</div>
 
-<div class="card"><h3>Technical Documentation Review</h3></div>
+<div class="card">
+<h3>Technical Documentation Review</h3>
+<p>Review of manuals, labels, technical files, and compliance documentation.</p>
+</div>
 
-<div class="card"><h3>Market Access Support</h3></div>
+<div class="card">
+<h3>Market Access Support</h3>
+<p>Support for product entry into Mexico, the United States, and Canada.</p>
+</div>
 
 </div>
 
@@ -423,13 +445,13 @@ document.addEventListener("DOMContentLoaded", function(){
         .then(function(){
 
             const whatsappMessage =
-`Hola Juan,
+`Hello Mr. CertiPro,
 
-Nombre: ${name}
-Empresa: ${company}
-Correo: ${email}
-Teléfono: ${phone}
-Servicio: ${service}
+Nombre / name: ${name}
+Empresa/ Company: ${company}
+Correo / Email: ${email}
+Teléfono / Mobile: ${phone}
+Servicio / Service: ${service}
 
 Mensaje:
 ${message}`;
